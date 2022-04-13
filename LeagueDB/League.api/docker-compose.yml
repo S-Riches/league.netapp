@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      - SA_PASSWORD=<leagueDBpass>
+      - ACCEPT_EULA=Y
+    ports:
+      - "5434:1433"
+  league.api:
+    image: ${DOCKER_REGISTRY-}leagueapi
+    build:
+      context: .
+      dockerfile: League.api/Dockerfile
+    ports:
+      - "9783:443"
+      

@@ -1,0 +1,26 @@
+services:
+  league.api:
+    build:
+      context: C:\Users\samr\source\repos\LeagueDB\League.api
+      dockerfile: League.api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: leagueapi
+    ports:
+    - target: 80
+    - published: 9783
+      target: 443
+    - target: 443
+    volumes:
+    - C:\Users\samr\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\samr\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  sqldata:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: <leagueDBpass>
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+    - published: 5434
+      target: 1433
+version: '3.4'
