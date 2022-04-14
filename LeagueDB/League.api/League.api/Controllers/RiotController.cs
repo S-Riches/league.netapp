@@ -25,50 +25,59 @@ namespace League.api.Controllers
         {
             return View();
         }
-        [HttpGet]
-        [Route("Player")]
-        public async Task<IActionResult> Player([FromQuery] string summonerName) {
-            try
-            {
+
+        //[HttpGet]
+        //[Route("Player")]
+        //public async Task<IActionResult> Player([FromQuery] string summonerName) {
+        //    try
+        //    {
                 
-                // awaits a response from the get player async function
-                var DeserialisedResponse = await riotService.GetPlayerAsync(summonerName);
-                // initialises a new SQL interactions class
-                var sql = new SqlInteractions();
-                string puuid = DeserialisedResponse.PUUID;
-                int summonerLevel = (int)DeserialisedResponse.SummonerLevel;
-                // calls the method and gives it access to the logger
-                sql.SendSummoner(summonerName, puuid, summonerLevel, logger);
-                // returns the value if all is gucii
-                return Ok(DeserialisedResponse);
-            }
-            catch
-            {
-                return BadRequest();
-            }
-        }
+        //        // awaits a response from the get player async function
+        //        var DeserialisedResponse = await riotService.GetPlayerAsync(summonerName);
+        //        // initialises a new SQL interactions class
+        //        var sql = new SqlInteractions();
+        //        string puuid = DeserialisedResponse.PUUID;
+        //        int summonerLevel = (int)DeserialisedResponse.SummonerLevel;
+        //        // calls the method and gives it access to the logger
+        //        sql.SendSummoner(summonerName, puuid, summonerLevel, logger);
+        //        // returns the value if all is gucii
+        //        return Ok(DeserialisedResponse);
+        //    }
+        //    catch
+        //    {
+        //        return BadRequest();
+        //    }
+        //}
+
         [HttpGet]
         [Route("Matches")]
-        public async Task<IActionResult> ShowMatchHistory([FromQuery] string puuid)
+        public async Task<IActionResult> ShowMatchHistory([FromQuery] string summonerName)
         {
+            if(string.IsNullOrEmpty(summonerName))
+            {
+                return BadRequest();
+            }
             try
             {
-                var output = await riotService.GetMatchesAsync(puuid);
-                var sql = new SqlInteractions();
-                // just realised that ill need to loop through each of the inputs for this one.
-                int GameID = output.Selec
-                int GameDuration = 
-                sql.SendMatch(GameID, GameDuration, logger);
-                return Ok(output.Select(item => item.info));
+                var player = await this.riotService.GetPlayerAsync(summonerName);
+
+                if(player != null)
+                {                    
+                    var matches = await this.riotService.GetMatchesAsync(player);
+                    
+                    player.Matches = matches;
+
+                    return Ok(player);
+                }
+
+                return NotFound();
             }
-            catch
+            catch(Exception e)
             {
                 return BadRequest();
             }
         }
-
     }
-        
 }
 
 // -- end of code here just wanted to remember some of these notes

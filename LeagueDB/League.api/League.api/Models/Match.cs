@@ -2,10 +2,16 @@
 {
     public class Match
     {
+        public bool Win { get; set; }
+        public int Kills { get; set; }
+        public int Deaths { get; set; }
+        public int GameDuration { get; set; }
+        public int Id { get; set; }
         public Metadata metadata { get; set; }
         public Info info { get; set; }
         public Challenges challenge { get; set; }
         public Team team { get; set; }
+        public Participant participant { get; set; }
 
     }
 

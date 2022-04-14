@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "qfBu5B6AfDszG9H8z4g/Wx04WPkndaOnzauWneNOKV9dSML3yv4IBQYzcWhpZBo17e146SAC4rslbP49xlfXcA==",
+  "dgSpecHash": "3mzTv7SqB8UR3uCbaqTtiFcES41fwVUGx0MhscyIbgubmAwRH3qaTn31vY8pqjvTySuZSdDJcXMO5qJlKupiQQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\samr\\source\\repos\\LeagueDB\\League.api\\League.api\\League.api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\samr\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\samr\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",
+    "C:\\Users\\samr\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\samr\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.0.0\\microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\samr\\.nuget\\packages\\microsoft.data.sqlclient\\4.1.0\\microsoft.data.sqlclient.4.1.0.nupkg.sha512",

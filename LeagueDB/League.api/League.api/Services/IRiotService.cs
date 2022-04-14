@@ -5,7 +5,7 @@ namespace League.api.Services
     public interface IRiotService
     {
         Task<Player?> GetPlayerAsync(string summonerName);
-        Task<List<Match>> GetMatchesAsync(string puuid); 
+        Task<List<Match?>?> GetMatchesAsync(Player player); 
     }
 }
 

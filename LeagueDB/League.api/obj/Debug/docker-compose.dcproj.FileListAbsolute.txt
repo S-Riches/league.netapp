@@ -15,3 +15,4 @@ C:\Users\samr\source\repos\LeagueDB\League.api\bin\Debug\League.api.pdb
 C:\Users\samr\source\repos\LeagueDB\League.api\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 C:\Users\samr\source\repos\LeagueDB\League.api\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\samr\source\repos\LeagueDB\League.api\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Users\samr\source\repos\LeagueDB\League.api\bin\Debug\Dapper.dll

@@ -116,3 +116,4 @@ C:\Users\samr\source\repos\LeagueDB\League.api\League.api\obj\Debug\net6.0\Leagu
 C:\Users\samr\source\repos\LeagueDB\League.api\League.api\obj\Debug\net6.0\ref\League.api.dll
 C:\Users\samr\source\repos\LeagueDB\League.api\League.api\obj\Debug\net6.0\League.api.pdb
 C:\Users\samr\source\repos\LeagueDB\League.api\League.api\obj\Debug\net6.0\League.api.genruntimeconfig.cache
+C:\Users\samr\source\repos\LeagueDB\League.api\League.api\bin\Debug\net6.0\Dapper.dll
